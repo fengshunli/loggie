@@ -5,7 +5,7 @@ FROM golang:1.16.0 as builder
 WORKDIR /go/src/loggie.io/loggie
 COPY . .
 # Build
-RUN CGO_ENABLED=1 go build -mod=vendor -a -o loggie cmd/loggie/main.go
+RUN CGO_ENABLED=1 go build -o loggie cmd/loggie/main.go
 
 # Run
 FROM alpine:3.15.0
